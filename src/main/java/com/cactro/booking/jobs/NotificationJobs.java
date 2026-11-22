@@ -19,8 +19,9 @@ public class NotificationJobs {
     private static final int MAX_ATTEMPTS = 3;
     private final EmailService email;
     private final UserRepository users;
-    public final AtomicLong processed = new AtomicLong(), failed = new AtomicLong();
-
+private final AtomicLong processed = new AtomicLong(), failed = new AtomicLong();
+public long processedCount() { return processed.get(); }
+public long failedCount() { return failed.get(); }
     public NotificationJobs(EmailService email, UserRepository users) {
         this.email = email;
         this.users = users;

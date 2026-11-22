@@ -23,6 +23,6 @@ public class HealthController {
         return Map.of("ok", true, "service", "Event Booking API",
                 "jobs", Map.of("queued", executor.getThreadPoolExecutor().getQueue().size(),
                         "running", executor.getActiveCount(),
-                        "processed", jobs.processed.get(), "failed", jobs.failed.get()));
+                        "processed", jobs.processedCount(), "failed", jobs.failedCount()));
     }
 }
